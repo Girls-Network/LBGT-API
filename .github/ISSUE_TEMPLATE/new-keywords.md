@@ -15,5 +15,9 @@ assignees: ['EstrogenHRT', 'AriasADev']
 ### Keyword meaning
 <!-- Enter the definition/meaning of the keyword here -->
 
+### Keyword Type
+- [ ] Gender
+- [ ] Sexuality
+
 ### Checklist
 - [ ] I have checked the file doesn't exist in the /docs/ folder

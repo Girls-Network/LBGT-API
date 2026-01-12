@@ -12,15 +12,25 @@ app.use(express.json());
 app.get('/api/:keyword', async (req: Request, res: Response) => {
   try {
     const keyword = req.params.keyword;
-    // Path goes up from dist/ to project root, then into docs/
-    const filePath = join(__dirname, '..', 'docs', `${keyword}.txt`);
+    let content: string;
+    let type: 'gender' | 'sexuality';
     
-    // Read the file content
-    const content = await readFile(filePath, 'utf-8');
+    // Try to find the file in gender folder
+    try {
+      const genderPath = join(__dirname, '..', 'docs', 'gender', `${keyword}.txt`);
+      content = await readFile(genderPath, 'utf-8');
+      type = 'gender';
+    } catch (genderError) {
+      // Try to find the file in sexuality folder
+      const sexualityPath = join(__dirname, '..', 'docs', 'sexuality', `${keyword}.txt`);
+      content = await readFile(sexualityPath, 'utf-8');
+      type = 'sexuality';
+    }
     
     // Return in the specified format
     res.json({
-      content: content
+      content: content.trim(),
+      type: type
     });
   } catch (error) {
     if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
