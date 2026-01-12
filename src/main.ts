@@ -50,6 +50,14 @@ app.get('/coffee', (req: Request, res: Response) =>
     })
 )
 
+// Okay this I have to do
+app.get('/coke', (req: Request, res: Response) =>
+    res.status(420).json({
+        error: "Enhance Your Calm",
+        message: "Damn... error 420 is srsly called this?"
+    })
+)
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Access the API at: http://localhost:${PORT}/api/<keyword>`);
