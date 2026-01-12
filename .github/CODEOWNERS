@@ -1,0 +1,22 @@
+# This file defines code ownership for the LGBT API repository
+# These users will be automatically requested for review when PRs are opened
+
+# Global ownership - all files
+* @EstrogenHRT @AriasADev
+
+# Documentation
+/docs/ @EstrogenHRT @AriasADev
+
+# Source code
+/src/ @EstrogenHRT @AriasADev
+
+# Docker files
+Dockerfile @EstrogenHRT @AriasADev
+docker-compose.yml @EstrogenHRT @AriasADev
+
+# Configuration files
+package.json @EstrogenHRT @AriasADev
+tsconfig.json @EstrogenHRT @AriasADev
+
+# GitHub workflow and configuration
+/.github/ @EstrogenHRT @AriasADev
